@@ -4,13 +4,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #052e16;
+  background: #1e293b;
   font-family: Arial;
   color: white;
 }
 
 .card {
-  background: #064e3b;
+  background: #0f172a;
   padding: 40px;
   border-radius: 16px;
   width: 340px;
