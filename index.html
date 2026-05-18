@@ -2,30 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Service Portal</title>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <div class="container">
-    <div class="card">
-      <h1>Enter Service ID</h1>
+<body style="
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  font-family: Arial, sans-serif;
+  color: white;
+">
 
-      <input
-        type="text"
-        id="serviceId"
-        placeholder="Service ID"
-      >
+  <div style="
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 16px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  ">
 
-      <button onclick="submitID()">
-        Continue
-      </button>
+    <h1>Enter Service ID</h1>
 
-      <p id="message"></p>
-    </div>
+    <input id="serviceId" type="text" placeholder="Service ID" style="
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    ">
+
+    <button onclick="submitID()" style="
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    ">
+      Continue
+    </button>
+
+    <p id="message" style="margin-top: 15px;"></p>
+
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function submitID() {
+      const serviceId = document.getElementById("serviceId").value;
+      const message = document.getElementById("message");
+
+      if (serviceId.trim() === "") {
+        message.textContent = "Please enter a Service ID";
+        return;
+      }
+
+      message.textContent = "Service ID entered: " + serviceId;
+    }
+  </script>
+
 </body>
 </html>
