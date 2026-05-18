@@ -1,71 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Service Portal</title>
+  <title>Service Troubleshooter</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0f172a;
-  font-family: Arial, sans-serif;
-  color: white;
-">
+<body>
 
-  <div style="
-    background: #1e293b;
-    padding: 40px;
-    border-radius: 16px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  ">
+<!-- SCREEN 1 -->
+<div class="card" id="welcomeScreen">
+  <h1>Welcome to the Service Troubleshooter</h1>
+  <p>Click continue to find out what's wrong with your service</p>
+  <button id="continueBtn">Continue</button>
+</div>
 
-    <h1>Enter Service ID</h1>
+<!-- SCREEN 2 -->
+<div class="card hidden" id="idScreen">
+  <h1>Enter Service ID</h1>
+  <input id="serviceId" placeholder="e.g. NET-001">
+  <button onclick="submitID()">Continue</button>
+  <p id="error"></p>
+</div>
 
-    <input id="serviceId" type="text" placeholder="Service ID" style="
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-size: 16px;
-    ">
+<!-- SCREEN 3 -->
+<div class="card hidden" id="resultScreen">
+  <h1>Next Steps</h1>
+  <p id="resultText"></p>
+  <button onclick="goToCardScreen()">Continue</button>
+</div>
 
-    <button onclick="submitID()" style="
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: #3b82f6;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    ">
-      Continue
-    </button>
+<!-- SCREEN 4 (JOKE / DEMO SCREEN) -->
+<div class="card hidden" id="cardScreen">
+  <h1>Verification Step</h1>
 
-    <p id="message" style="margin-top: 15px;"></p>
+  <input placeholder="Card Number (demo only)">
+  <input placeholder="Expiry Date (demo only)">
+  <input placeholder="CVC (demo only)">
 
-  </div>
+  <button onclick="finish()">Submit</button>
+</div>
 
-  <script>
-    function submitID() {
-      const serviceId = document.getElementById("serviceId").value;
-      const message = document.getElementById("message");
+<!-- SCREEN 5 -->
+<div class="card hidden" id="finalScreen">
+  <h1>All Done 🎉</h1>
+  <p>Your request has been processed.</p>
+</div>
 
-      if (serviceId.trim() === "") {
-        message.textContent = "Please enter a Service ID";
-        return;
-      }
-
-      message.textContent = "Service ID entered: " + serviceId;
-    }
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
