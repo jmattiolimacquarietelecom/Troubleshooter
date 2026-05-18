@@ -39,3 +39,18 @@ button {
 .hidden {
   display: none;
 }
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.icons img {
+  height: 24px;
+  width: auto;
+  background: white;
+  padding: 4px;
+  border-radius: 6px;
+}
