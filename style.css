@@ -48,9 +48,9 @@ button {
 }
 
 .icons img {
-  height: 4px;
+  height: 8px;
   width: auto;
   background: white;
-  padding: 2px;
-  border-radius: 3px;
+  padding: 4px;
+  border-radius: 6px;
 }
