@@ -35,7 +35,7 @@ function submitID() {
   if (id === "NET-001") {
     message = "Restart modem → Check cables → Run test.";
   } else {
-    message = "Service issue detected → Follow guided steps.";
+    message = "Press continue to find out what's wrong.";
   }
 
   idScreen.classList.add("hidden");
